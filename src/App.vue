@@ -1,14 +1,24 @@
 <template>
-  <div id="app">
-    <transition name="fade" mode="out-in">
+  <v-app>
+    <Header_Component v-if="!$route.path.includes('login')"></Header_Component>
+    <v-main>
       <router-view></router-view>
-    </transition>
-  </div>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-
+import Header_Component from "@/components/shared/Header_Component";
 export default {
+  name: 'App',
 
-}
+  components: {
+    // eslint-disable-next-line vue/no-unused-components
+    Header_Component
+  },
+
+  data: () => ({
+    //
+  }),
+};
 </script>

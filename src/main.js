@@ -5,6 +5,7 @@ import Axios from "axios";
 import { router } from "./router";
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import vuetify from './plugins/vuetify'
 
 console.log(process.env.VUE_APP_TITLE)
 
@@ -44,5 +45,6 @@ Axios.interceptors.response.use(
 
 new Vue({
   router,
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')
